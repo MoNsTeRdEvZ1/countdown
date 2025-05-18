@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>العد التنازلي</title>
+<title>العد التنازلي مع خلفية متحركة</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -11,22 +11,42 @@
     margin-top: 100px;
     background-color: #f0f0f0;
     color: #333;
-    direction: rtl; /* تخلي الصفحة من اليمين لليسار */
+    direction: rtl;
+    
+    /* الخلفية المتحركة */
+    background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2E5Z2Z3OHR2ODA1YjA5a25xemk0ZG8zbGpsdHdqazkybXp0MmQxZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ixmrPmQ22MSN6O1DX7/giphy.gif');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    animation: backgroundPulse 10s infinite alternate;
   }
+
+  @keyframes backgroundPulse {
+    0% {
+      filter: brightness(0.8);
+    }
+    50% {
+      filter: brightness(1);
+    }
+    100% {
+      filter: brightness(0.8);
+    }
+  }
+
   .countdown {
     font-size: 3rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.85);
     padding: 20px;
     display: inline-block;
     border-radius: 10px;
     box-shadow: 0 0 10px #ccc;
-    direction: rtl; /* تخلي النص داخل العد من اليمين لليسار */
+    direction: rtl;
   }
 </style>
 </head>
 <body>
 
-<h1>العد التنازلي</h1>
+<h1>العد التنازلي لتاريخ 2025/06/13</h1>
 <div class="countdown" id="countdown">جارِ الحساب...</div>
 
 <script>
